@@ -155,7 +155,7 @@ return [
                 'icon_class' => 'voyager-person',
             ],
             'Home' => [
-                'route'        => '/',
+                'route'        => 'http://localhost/jumla-ecommerce/public/',
                 'icon_class'   => 'voyager-home',
                 'target_blank' => true,
             ],
