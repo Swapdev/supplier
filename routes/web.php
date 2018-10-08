@@ -60,6 +60,8 @@ Route::post('send-confirm-phone', 'ProfileController@sendConfirmPhone')->name('s
 
 Auth::routes();
 
+Route::get('logout', 'Auth\LoginController@logout')->name('logoutUrl');
+
 
 /**
  *  Supplier Dashboard

@@ -1,9 +1,14 @@
 <header id="banner-secton">
    <div class="container">
-      <div id="top-bar">     
-        <p><a href="#"><span>login</span></a>-<a href="#">create account</a></p>
-      </div>
-    
+   <div id="top-bar">     
+   @guest
+        <p><a href="{{url('/login')}}"><span>login</span></a>-<a href="{{url('/register')}}">create account</a></p>
+    @endguest
+    @auth 
+    <p><a href="{{url('/dashboard')}}"><span>{{ Auth::user()->name }}</span></a>-<a href="{{route('logout')}}">Logout</a></p>
+     
+    @endauth
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
       <a class="navbar-brand" href="javascript:void(0)"><img src="{{ url('/').'/storage/'.setting('site.logo')  }}"></a>
