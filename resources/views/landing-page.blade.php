@@ -1,52 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>{{ setting('site.title') }}</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="./css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
-  </head>
-<body>
+@extends('layouts.app')
 
-<section id="banner-secton">
-   <div class="container">
-      <div id="top-bar">     
-        <p><a href="#"><span>login</span></a>-<a href="#">create account</a></p>
-      </div>
-    
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container">
-      <a class="navbar-brand" href="javascript:void(0)"><img src="{{ url('/').'/storage/'.setting('site.logo')  }}"></a>
-      <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="false">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="navbar-collapse collapse" id="navb" style="">
-      {{ menu('home', 'menus.home-menu')}}
-        <form class="form-inline">
-          <input class="form-control" placeholder="Search" type="text">
-          <button class="btn btn-success" type="button"><i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </form>
-        <p class="cart-sec"><i class="fa fa-shopping-bag" aria-hidden="true"></i> 0 items<span>qar 0.00</span></p>
-      </div>
-    </div>
-    </nav>
-
-
-    <div class="banner-caption text-center">
-      <h1>{{ setting('home.home_tagline') }}</h1>
-      <p>{{ setting('home.home_sub_tagline') }}</p>
-      <a class="btn btn-secondary" href="javascript:void(0)">main page</a>
-      <a class="btn btn-secondary" href="javascript:void(0)">browse catalog</a>
-    </div>
-  </div>
-</section>
-
+@section('content')
 
 <section id="about-section">
   <div class="container">
@@ -72,59 +26,83 @@
 <section id="works-section">
   <div class="container">
       <div class="heading-sec text-center">
-        <h2>how it works</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus pulvinar neque, eget ultricies ex porttitor id. Donec maximus nulla eu ex tempor faucibus. Morbi viverra vehicula dictum.</p>
+        <h2>{{ setting('hiw.hiw_title') }}</h2>
+                {{ setting('hiw.hiw_description') }}
       </div>
 
 
 
       <div class="flow-pats-section text-center">
         <div class="row flow-inner">
-          <div class="col-lg-4 left-part"><img src="{{ url('/').'/storage/'.setting('site.footer_logo')  }}"></div>
-          <div class="col-lg-4 center-part"><h1>order</h1></div>
-          <div class="col-lg-4 right-part"><img src="images/company-logo.png"></div>
+          <div class="col-lg-4 left-part">
+            <img src="{{ url('/').'/storage/'.setting('hiw.step_one_image')  }}">
+            <h4 class="step-title">{{ setting('hiw.step_one_title') }}</h4>
+          </div>
+          <div class="col-lg-4 center-part"><h1>{{ setting('hiw.step_one_two_path') }}</h1></div>
+          <div class="col-lg-4 right-part">
+            <img src="{{ url('/').'/storage/'.setting('hiw.step_two_image')  }}">
+            <h4 class="step-title">{{setting('hiw.step_two_title')}}</h4>
+          </div>
         </div>
       </div>
       
        <div class="flow-pats-section text-center">
         <div class="row flow-inner">
-          <div class="col-lg-12 center-part"><h1>get a varification</h1></div>
+          <div class="col-lg-12 center-part"><h1>{{ setting('hiw.step_two_three_path') }}</h1></div>
         </div>
       </div>
 
       <div class="flow-pats-section text-center">
         <div class="row flow-inner">
-          <div class="col-lg-4 left-part"><img src="{{ url('/').'/storage/'.setting('site.footer_logo')  }}"></div>
-          <div class="col-lg-4 center-part"><h1>get a varification</h1></div>
-          <div class="col-lg-4 right-part"><img src="{{ url('/').'/storage/'.setting('site.footer_logo')  }}"></div>
+          <div class="col-lg-4 left-part">
+            <img src="{{ url('/').'/storage/'.setting('hiw.step_three_image')  }}">
+            <h4 class="step-title">{{setting('hiw.step_three_title')}}</h4>
+            </div>
+          <div class="col-lg-4 center-part"><h1>{{ setting('hiw.step_three_four_path') }}</h1></div>
+          <div class="col-lg-4 right-part">
+            <img src="{{ url('/').'/storage/'.setting('hiw.step_four_image')  }}">
+            <h4 class="step-title">{{setting('hiw.step_four_title')}}</h4>
+            </div>
         </div>
       </div>
 
       <div class="flow-pats-section text-center">
         <div class="row flow-inner">
-          <div class="col-lg-12 center-part"><h1>approved</h1></div>
+          <div class="col-lg-12 center-part"><h1>{{ setting('hiw.step_four_five_path') }}</h1></div>
         </div>
       </div>
 
       <div class="flow-pats-section text-center">
         <div class="row flow-inner">
-          <div class="col-lg-4 left-part"><img src="{{ url('/').'/storage/'.setting('site.footer_logo')  }}"></div>
-          <div class="col-lg-4 center-part"><h1>notify</h1></div>
-          <div class="col-lg-4 right-part"><img src="images/company-logo.png"></div>
+          <div class="col-lg-4 left-part">
+          <img src="{{ url('/').'/storage/'.setting('hiw.step_five_image')  }}">
+          <h4>{{setting('hiw.step_five_title')}}</h4>
+          </div>
+          <div class="col-lg-4 center-part"><h1>{{ setting('hiw.step_five_six_path') }}</h1></div>
+          <div class="col-lg-4 right-part">
+            <img src="{{ url('/').'/storage/'.setting('hiw.step_six_image')  }}">
+            <h4 class="step-title">setting('hiw.step_six_title')</h4>
+          </div>
         </div>
       </div>
 
       <div class="flow-pats-section text-center">
         <div class="row flow-inner">
-          <div class="col-lg-12 center-part"><h1>checkout</h1></div>
+          <div class="col-lg-12 center-part"><h1>{{setting('hiw.step_six_seven_path')}}</h1></div>
         </div>
       </div>
 
        <div class="flow-pats-section text-center">
         <div class="row flow-inner">
-          <div class="col-lg-4 left-part"><img src="{{ url('/').'/storage/'.setting('site.footer_logo')  }}"></div>
-          <div class="col-lg-4 center-part"><h1>ffsfsd</h1></div>
-          <div class="col-lg-4 right-part"><img src="{{ url('/').'/storage/'.setting('site.footer_logo')  }}"></div>
+          <div class="col-lg-4 left-part">
+            <img src="{{ url('/').'/storage/'.setting('hiw.step_seven_image')  }}">
+            <h4 class="step-title">{{setting('hiw.step_seven_title')}}</h4>
+          </div>
+          <div class="col-lg-4 center-part"><h1>{{setting('hiw.step_seven_eight_path')}}</h1></div>
+          <div class="col-lg-4 right-part">
+            <img src="{{ url('/').'/storage/'.setting('hiw.step_eight_image')  }}">
+            <h4 class="step-title">{{setting('hiw.step_eight_title')}}</h4>
+          </div>
         </div>
       </div>
   </div>
@@ -314,33 +292,8 @@
   </div>
 </section>
 
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="logo-sec col-lg-3"><a class="navbar-brand" href="#"><img src="{{ url('/').'/storage/'.setting('site.footer_logo')  }}"></a></div>
-
-      <div class="nav-sec col-lg-9">
-        <nav class="navbar navbar-expand-lg">
-        {{ menu('home', 'menus.home-menu')}}
-        </nav>
-      </div>
-      {{ menu('social', 'menus.footer-social')}}
-
-      <ul class="copyright-bar mr-auto">
-        <li class="nav-item">
-          <p class="nav-link">{!!  setting('site.copyright_left') !!}</p>
-        </li>
-        <li class="nav-item">
-          <p class="nav-link">{!!  setting('site.copyright_center') !!}</p>
-        </li>
-        <li class="nav-item">
-          <p class="nav-link">{!!  setting('site.copyright_right') !!}</p>
-        </li>
-      </ul>          
-    </div>
-  </div>
-</footer>
-
+@endsection
+@section('extra-js')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -380,5 +333,4 @@ $(document).ready(function(){
   });
 });
 </script>
-</body>
-</html>
+@endsection

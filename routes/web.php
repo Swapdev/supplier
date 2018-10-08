@@ -57,8 +57,13 @@ Route::post('send-confirm-phone', 'ProfileController@sendConfirmPhone')->name('s
 /**
  * Authentication related Routes
  */
+
 Auth::routes();
 
+
+/**
+ *  Supplier Dashboard
+ */
 
 
 Route::get('/home', 'HomeController@index')->name('home');

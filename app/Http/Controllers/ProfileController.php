@@ -30,7 +30,7 @@ class ProfileController extends Controller
 
         $emailverified = ProfileVerification::where('user', Auth::user()->id)->where('key', 'email')->where('value', Auth::user()->email)->where('verified','Y')->exists();
 
-        return view('profile.edit', compact('phoneverified', 'emailverified'));
+        return view('dashboard.profile.edit', compact('phoneverified', 'emailverified'));
     }
 
 
@@ -145,7 +145,7 @@ class ProfileController extends Controller
      */
 
     public function main(){
-            return view('profile.main');
+            return view('dashboard.profile.main');
     }
 
 }
